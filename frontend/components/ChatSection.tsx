@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, MessageSquare, Bot, User, Sparkles, AlertCircle, FileText } from 'lucide-react';
+import { Send, Bot, User, Sparkles, AlertCircle, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Badge } from '@/components/ui/Badge';
@@ -26,12 +26,8 @@ export const ChatSection = () => {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   useEffect(() => {
-    scrollToBottom();
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isLoading]);
 
   const handleSendMessage = async () => {
@@ -87,7 +83,7 @@ export const ChatSection = () => {
             AI Assistant
           </h2>
         </div>
-        <Badge variant="outline" className="bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100 transition-colors shadow-sm gap-1.5 pl-1.5">
+        <Badge  className="bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100 transition-colors shadow-sm gap-1.5 pl-1.5">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -107,8 +103,8 @@ export const ChatSection = () => {
 
               {/* Avatar */}
               <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center border shadow-sm ${msg.role === 'user'
-                  ? 'bg-zinc-100 border-zinc-200'
-                  : 'bg-zinc-900 border-zinc-800'
+                ? 'bg-zinc-100 border-zinc-200'
+                : 'bg-zinc-900 border-zinc-800'
                 }`}>
                 {msg.role === 'user' ? <User className="w-4 h-4 text-zinc-600" /> : <Bot className="w-4 h-4 text-white" />}
               </div>
@@ -117,10 +113,10 @@ export const ChatSection = () => {
               <div className="space-y-2">
                 <div
                   className={`rounded-2xl px-4 py-2.5 text-sm leading-relaxed shadow-sm break-words ${msg.role === 'user'
-                      ? 'bg-zinc-900 text-white rounded-tr-none'
-                      : msg.isError
-                        ? 'bg-red-50 text-red-800 border border-red-100 rounded-tl-none'
-                        : 'bg-white border border-zinc-200 text-zinc-700 rounded-tl-none'
+                    ? 'bg-zinc-900 text-white rounded-tr-none'
+                    : msg.isError
+                      ? 'bg-red-50 text-red-800 border border-red-100 rounded-tl-none'
+                      : 'bg-white border border-zinc-200 text-zinc-700 rounded-tl-none'
                     }`}
                 >
                   {msg.isError && <AlertCircle className="w-4 h-4 inline-block mr-2 -mt-0.5" />}
