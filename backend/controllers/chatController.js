@@ -46,7 +46,7 @@ export const chat = async (req, res) => {
 
         // 4. Call Gemini
         const model = new ChatGoogleGenerativeAI({
-            model: "gemini-2.0-flash",
+            model: "gemini-2.5-flash",
             apiKey: process.env.GEMINI_API_KEY,
             temperature: 0.7,
         });
