@@ -102,7 +102,7 @@ const worker = new Worker("pdf-processing", async (job) => {
         } catch (e) {
             console.log(`Creating Qdrant collection '${collectionName}'...`);
             await qdrant.createCollection(collectionName, {
-                vectors: { size: 768, distance: "Cosine" }, // Adjust size based on Gemini model (768 for text-embedding-004)
+                vectors: { size: 3072, distance: "Cosine" }, // Updated to match Gemini embedding-001 output (3072)
             });
         }
 
@@ -113,6 +113,8 @@ const worker = new Worker("pdf-processing", async (job) => {
         });
 
         console.log(`Job ${job.id} completed. Processed ${chunks.length} chunks.`);
+        console.log("-----------------------------------------");
+        console.log("Worker is ready for new jobs...");
 
         // Cleanup local file
         if (fs.existsSync(filePath)) {
