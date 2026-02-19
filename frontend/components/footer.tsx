@@ -20,7 +20,7 @@ export const Footer = () => {
             </a>
             . The source code is available on{" "}
             <a
-              href="#"
+              href="https://github.com/triptishakya-dev"
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4 hover:text-foreground transition-colors"
