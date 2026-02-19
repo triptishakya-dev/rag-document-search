@@ -129,11 +129,11 @@ export const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
-      <div className="w-full flex h-20 items-center px-8 ">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60 shadow-sm">
+      <div className="w-full flex h-24 items-center px-10">
         <div className="mr-8 hidden md:flex">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
-            <div className="relative h-10 w-10 overflow-hidden rounded-lg shadow-lg shadow-primary/20">
+          <Link href="/" className="mr-8 flex items-center space-x-3 group">
+            <div className="relative h-12 w-12 overflow-hidden rounded-xl shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-all duration-300 ring-2 ring-primary/20 group-hover:ring-primary/50">
               <Image
                 src="/documentation.png"
                 alt="DocSearch+ Logo"
@@ -141,21 +141,21 @@ export const Header = () => {
                 className="object-cover"
               />
             </div>
-            <span className="hidden font-bold sm:inline-block text-foreground tracking-tight text-xl">
+            <span className="hidden font-bold sm:inline-block text-foreground tracking-tight text-3xl group-hover:text-primary transition-colors duration-300">
               DocSearch<span className="text-primary">+</span>
             </span>
           </Link>
           <NavigationMenu>
-            <NavigationMenuList className="gap-1">
+            <NavigationMenuList className="gap-2">
               <NavigationMenuItem>
-                <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-muted-foreground hover:bg-muted hover:text-foreground transition-colors data-[active]:bg-muted data-[active]:text-foreground", pathname === '/' && "bg-muted text-foreground font-medium")}>
+                <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-lg font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-all duration-200 px-5 py-3 h-auto data-[active]:bg-muted data-[active]:text-foreground", pathname === '/' && "bg-muted text-foreground font-semibold shadow-sm")}>
                   <Link href="/">
                     Dashboard
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-muted-foreground hover:bg-muted hover:text-foreground transition-colors data-[active]:bg-muted data-[active]:text-foreground", pathname === '/query' && "bg-muted text-foreground font-medium")}>
+                <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-lg font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-all duration-200 px-5 py-3 h-auto data-[active]:bg-muted data-[active]:text-foreground", pathname === '/query' && "bg-muted text-foreground font-semibold shadow-sm")}>
                   <Link href="/query">
                     Query
                   </Link>
@@ -325,38 +325,7 @@ export const Header = () => {
 
           <div className="flex items-center gap-2">
             <ModeToggle />
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full ring-2 ring-border/50 hover:ring-border transition-all">
-                  <Avatar className="h-8 w-8">
-                    <AvatarImage src="/avatars/01.png" alt="@user" />
-                    <AvatarFallback className="bg-primary/20 text-primary">AU</AvatarFallback>
-                  </Avatar>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56" align="end" forceMount>
-                <DropdownMenuLabel className="font-normal">
-                  <div className="flex flex-col space-y-1">
-                    <p className="text-sm font-medium leading-none">Admin User</p>
-                    <p className="text-xs leading-none text-muted-foreground">
-                      admin@example.com
-                    </p>
-                  </div>
-                </DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem className="cursor-pointer">
-                  <User className="mr-2 h-4 w-4" />
-                  <span>Profile</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  Settings
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem className="cursor-pointer text-destructive focus:text-destructive">
-                  Log out
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+           
           </div>
         </div>
       </div>
