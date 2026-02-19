@@ -130,7 +130,7 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60 shadow-sm">
-      <div className="w-full max-w-7xl mx-auto flex h-24 items-center px-6">
+      <div className="w-full flex h-24 items-center px-10">
         <div className="mr-8 hidden md:flex">
           <Link href="/" className="mr-8 flex items-center space-x-3 group">
             <div className="relative h-12 w-12 overflow-hidden rounded-xl shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-all duration-300 ring-2 ring-primary/20 group-hover:ring-primary/50">
