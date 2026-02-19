@@ -130,7 +130,7 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60 shadow-sm">
-      <div className="w-full flex h-24 items-center px-10">
+      <div className="w-full max-w-7xl mx-auto flex h-24 items-center px-6">
         <div className="mr-8 hidden md:flex">
           <Link href="/" className="mr-8 flex items-center space-x-3 group">
             <div className="relative h-12 w-12 overflow-hidden rounded-xl shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-all duration-300 ring-2 ring-primary/20 group-hover:ring-primary/50">
@@ -155,8 +155,8 @@ export const Header = () => {
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-lg font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-all duration-200 px-5 py-3 h-auto data-[active]:bg-muted data-[active]:text-foreground", pathname === '/#how-it-works' && "bg-muted text-foreground font-semibold shadow-sm")}>
-                  <Link href="/#how-it-works">
+                <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-lg font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-all duration-200 px-5 py-3 h-auto data-[active]:bg-muted data-[active]:text-foreground", pathname === '/how-it-work' && "bg-muted text-foreground font-semibold shadow-sm")}>
+                  <Link href="/how-it-work">
                     How it Works
                   </Link>
                 </NavigationMenuLink>
@@ -194,7 +194,7 @@ export const Header = () => {
               <Link href="/upload" className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${pathname === '/upload' ? 'bg-muted text-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'}`}>
                 <Upload className="h-5 w-5" /> Upload
               </Link>
-              <Link href="/#how-it-works" className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${pathname === '/#how-it-works' ? 'bg-muted text-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'}`}>
+              <Link href="/how-it-work" className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${pathname === '/how-it-work' ? 'bg-muted text-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'}`}>
                 <HelpCircle className="h-5 w-5" /> How it Works
               </Link>
             </div>
