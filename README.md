@@ -32,7 +32,7 @@ Our stack is categorized for clarity and architectural separation:
 - **Prisma**: Type-safe ORM for relational data management.
 
 ### 🤖 AI & Vector
-- **Google Gemini 2.5**: State-of-the-art LLM for embeddings and answer generation.
+- **Google Gemini 1.5/2.0**: High-performance LLMs for embeddings and answer generation.
 - **Qdrant DB**: High-performance vector database optimized for similarity search.
 - **LangChain**: Orchestrating document loading and retrieval pipelines.
 
