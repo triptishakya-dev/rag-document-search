@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon  index.js"
+    "dev": "nodemon index.js",
+    "dev:all": "nodemon index.js & node worker.js"
   },
   "author": "Tripti Shakya",
   "license": "MIT",
