@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Search, FileText, Download, Trash2, Filter, SortAsc, MoreVertical, Files, RefreshCw, LayoutGrid, List } from 'lucide-react';
+import { Search, Download, Trash2, Filter, SortAsc, MoreVertical, RefreshCw, LayoutGrid, List } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
@@ -94,10 +94,7 @@ export const DocumentList = () => {
       {/* Header Section */}
       <div className="bg-background/80 backdrop-blur-md p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 border-b border-border/40 z-10">
         <div>
-          <h2 className="text-2xl font-bold text-foreground tracking-tight flex items-center gap-2">
-            <div className="p-2 bg-primary/10 rounded-lg text-primary">
-              <Files className="w-6 h-6" />
-            </div>
+          <h2 className="text-2xl font-bold text-foreground tracking-tight">
             Documents
           </h2>
           <p className="text-muted-foreground text-sm mt-1 font-medium">Manage and organize your knowledge base.</p>
@@ -161,13 +158,7 @@ export const DocumentList = () => {
                   {currentDocuments.map((doc) => (
                     <Card key={doc.id} className="group hover:border-primary/50 hover:shadow-lg transition-all bg-card border-border/40 duration-300 overflow-hidden flex flex-col">
                       <div className="flex flex-col h-full">
-                        <div className="flex flex-row items-start justify-between p-4 pb-0">
-                          <div className="p-3 bg-muted text-foreground rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors shadow-sm">
-                            <FileText className="w-6 h-6" />
-                          </div>
-                        </div>
-
-                        <div className="px-4 py-3 flex-1">
+                        <div className="px-4 py-4 flex-1">
                           <h3 className="font-bold text-black truncate text-sm leading-snug" title={doc.title}>
                             {doc.title}
                           </h3>
@@ -210,9 +201,6 @@ export const DocumentList = () => {
                         <TableRow key={doc.id} className="hover:bg-muted/30">
                           <TableCell className="font-medium">
                             <div className="flex items-center gap-3">
-                              <div className="p-2 bg-muted rounded-md text-foreground">
-                                <FileText className="w-4 h-4" />
-                              </div>
                               <span className="truncate max-w-[300px]" title={doc.title}>{doc.title}</span>
                             </div>
                           </TableCell>
